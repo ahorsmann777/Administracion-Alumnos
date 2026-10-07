@@ -1,0 +1,95 @@
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  margin: 0;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+header {
+  background: #0f172a;
+  color: #fff;
+  padding: 16px 24px;
+}
+header h1 { margin: 0; font-size: 20px; }
+main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+h2 { margin: 0; }
+.barra { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.barra h2 { flex: 1; }
+.btn {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1e293b;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover { background: #f8fafc; }
+.btn.primario { background: #2563eb; border-color: #2563eb; color: #fff; }
+.btn.primario:hover { background: #1d4ed8; }
+.btn.secundario { background: #e2e8f0; border-color: #e2e8f0; }
+.btn.peligro { background: #fee2e2; border-color: #fecaca; color: #b91c1c; }
+.oculto { display: none !important; }
+
+.grid-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+.tarjeta-curso {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+}
+.tarjeta-curso h3 { margin: 0 0 6px; }
+.tarjeta-curso .meta { color: #64748b; font-size: 13px; margin: 2px 0; }
+.tarjeta-curso .acciones { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.etiquetas { display: inline-block; background: #eff6ff; color: #1d4ed8; border-radius: 999px; padding: 2px 10px; font-size: 12px; margin-top: 6px; }
+
+.info { color: #475569; margin: 4px 0 16px; font-size: 14px; }
+.tarjeta { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+.form-alumno h3 { margin-top: 0; }
+.campos-fijos, .campos-mes { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+input, select, textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid #93c5fd; }
+.campos-mes .celda-mes { display: flex; flex-direction: column; }
+.campos-mes .celda-mes span { font-size: 11px; color: #64748b; margin-bottom: 2px; }
+textarea { width: 100%; min-height: 48px; margin-bottom: 10px; }
+
+.tabla-holder { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { border: 1px solid #e2e8f0; padding: 8px 10px; text-align: left; white-space: nowrap; }
+th { background: #f8fafc; position: sticky; top: 0; }
+.celda-edit input { width: 90px; }
+.celda-edit input[type=checkbox] { width: auto; }
+.celda-edit textarea { min-height: 28px; width: 180px; margin: 0; }
+.fila-resaltada { background: #fefce8; }
+.fila-resaltada td { white-space: normal; min-width: 60px; }
+
+.paginacion { display: flex; gap: 6px; margin-top: 12px; align-items: center; justify-content: flex-end; }
+
+.modal { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.5); display: flex; align-items: flex-start; justify-content: center; padding: 40px 16px; z-index: 50; }
+.modal-contenido { background: #fff; border-radius: 12px; padding: 24px; width: 100%; max-width: 640px; max-height: 90vh; overflow-y: auto; }
+.modal-contenido h3 { margin-top: 0; }
+.campo { margin-bottom: 12px; }
+.campo label { display: block; font-size: 13px; color: #475569; margin-bottom: 4px; }
+.campo input, .campo select { width: 100%; }
+.anio-nav { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.anio-nav span { flex: 1; text-align: center; font-weight: 600; }
+.calendario { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.mes-boton { border: 1px solid #cbd5e1; background: #f8fafc; padding: 10px; border-radius: 8px; cursor: pointer; text-align: center; }
+.mes-boton.seleccionado { background: #2563eb; color: #fff; border-color: #2563eb; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.chips span { background: #e2e8f0; border-radius: 999px; padding: 4px 12px; font-size: 12px; }
+.modal-acciones { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.vacio { text-align: center; color: #64748b; padding: 40px 0; }
+.aviso { margin-top: 8px; font-size: 13px; color: #b91c1c; }

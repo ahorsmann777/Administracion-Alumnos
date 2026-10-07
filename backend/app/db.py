@@ -1,0 +1,18 @@
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
+from .config import DATABASE_URL
+
+
+def get_conn():
+    conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
+    conn.autocommit = False
+    return conn
+
+
+def get_db():
+    conn = get_conn()
+    try:
+        yield conn
+    finally:
+        conn.close()

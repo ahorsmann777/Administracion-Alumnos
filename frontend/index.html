@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administración de Alumnos</title>
+<link rel="stylesheet" href="/ui/app.css">
+</head>
+<body>
+<header>
+  <h1>Administración de Alumnos</h1>
+</header>
+
+<main>
+  <section id="vista-cursos">
+    <div class="barra">
+      <h2>Cursos</h2>
+      <button id="btn-nuevo-curso" class="btn primario">+ Nuevo curso</button>
+    </div>
+    <div id="lista-cursos" class="grid-cursos"></div>
+  </section>
+
+  <section id="vista-curso" class="oculto">
+    <div class="barra">
+      <button id="btn-volver" class="btn">← Volver</button>
+      <h2 id="titulo-curso"></h2>
+      <a id="link-csv" class="btn secundario" href="#">Descargar CSV</a>
+    </div>
+    <p id="info-curso" class="info"></p>
+
+    <form id="form-alumno" class="tarjeta form-alumno">
+      <h3>Alta de alumno</h3>
+      <div class="campos-fijos">
+        <input id="al-nombre" placeholder="Nombre *" required>
+        <input id="al-mail" placeholder="Mail">
+      </div>
+      <div id="al-meses" class="campos-mes"></div>
+      <textarea id="al-obs" placeholder="Observaciones"></textarea>
+      <button class="btn primario">Dar de alta</button>
+    </form>
+
+    <div class="tarjeta">
+      <div class="barra">
+        <input id="busqueda" placeholder="Buscar por nombre o mail...">
+        <button id="btn-buscar" class="btn">Buscar</button>
+      </div>
+      <div class="tabla-holder">
+        <table id="tabla-alumnos">
+          <thead id="thead-alumnos"></thead>
+          <tbody id="tbody-alumnos"></tbody>
+        </table>
+      </div>
+      <div id="paginacion" class="paginacion"></div>
+    </div>
+  </section>
+</main>
+
+<div id="modal-curso" class="modal oculto">
+  <div class="modal-contenido">
+    <h3>Nuevo curso</h3>
+    <div class="campo"><label>Nombre</label><input id="c-nombre" required></div>
+    <div class="campo"><label>Año</label><input id="c-anio" type="number" placeholder="2026"></div>
+    <div class="campo"><label>Descripción</label><input id="c-desc" placeholder="Opcional"></div>
+    <div class="campo">
+      <label>Tipo de dato de las columnas "mes"</label>
+      <select id="c-tipo">
+        <option value="numeric">Nota / numérico</option>
+        <option value="boolean">Asistencia (sí/no)</option>
+        <option value="date">Fecha</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label>Calendario: seleccioná los meses del curso</label>
+      <div class="anio-nav">
+        <button id="anio-prev" class="btn">‹</button>
+        <span id="anio-actual"></span>
+        <button id="anio-next" class="btn">›</button>
+      </div>
+      <div id="calendario" class="calendario"></div>
+      <div class="campo"><label>Etiqueta personalizada para todos (opcional)</label><input id="c-etiqueta" placeholder="Ej. Cuota, Parcial, Tema"></div>
+    </div>
+    <div id="meses-seleccionados" class="chips"></div>
+    <div class="modal-acciones">
+      <button id="btn-cancelar" class="btn">Cancelar</button>
+      <button id="btn-crear" class="btn primario">Crear curso</button>
+    </div>
+  </div>
+</div>
+
+<script src="/ui/app.js"></script>
+</body>
+</html>
