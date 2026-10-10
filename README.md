@@ -1,4 +1,4 @@
-# API de Administración de Alumnos
+# API de Administración de Alumnos en desarrollo #
 
 Web API (FastAPI + PostgreSQL) para administrar alumnos por curso. Cada curso
 se materializa como una **tabla propia** en PostgreSQL con columnas `Nombre`,
