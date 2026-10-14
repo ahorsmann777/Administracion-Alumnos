@@ -6,6 +6,8 @@ se materializa como una **tabla propia** en PostgreSQL con columnas `Nombre`,
 de dato (`numeric`, `boolean` o `date`) se definen al crear el curso desde un
 **calendario interactivo** en la interfaz web.
 
+![Captura de la interfaz](Captura.jpg)
+
 ## Requisitos
 
 - Python 3.10+
@@ -67,4 +69,4 @@ backend/app/
   schemas.py     # Modelos Pydantic
   routers/       # Endpoints de cursos y alumnos
 frontend/        # UI simple (HTML/CSS/JS) servida por FastAPI
-```# Administracion-Alumnos
+```
