@@ -1,6 +1,6 @@
-# API de Administración de Alumnos en desarrollo #
+# API de Administración de (Alumnos en desarrollo) #
 
-Web API (FastAPI + PostgreSQL) para administrar alumnos por curso. Cada curso
+Web API (FastAPI + PostgreSQL) para administrar alumnos para cursos. Cada curso
 se materializa como una **tabla propia** en PostgreSQL con columnas `Nombre`,
 `Mail`, `mes1..mesN`, `Observaciones`. La cantidad de columnas `mes` y su tipo
 de dato (`numeric`, `boolean` o `date`) se definen al crear el curso desde un
@@ -17,13 +17,13 @@ de dato (`numeric`, `boolean` o `date`) se definen al crear el curso desde un
 
 La API conecta con el rol `alumnos_api` en la base `alumnos`. Si todavía no
 existen, créalos una sola vez (desde un usuario con privilegios de superusuario):
-
+Por ejemplo:
 ```sql
 CREATE ROLE alumnos_api LOGIN PASSWORD 'alumnos_api_2026*';
 CREATE DATABASE alumnos OWNER alumnos_api;
 ```
 
-La cadena de conexión se configura en el archivo `.env`
+El connection string se configura en el archivo `.env`
 (ver `.env.example`). Los metadatos de los cursos se guardan en la tabla
 `cursos` y cada curso crea su propia tabla `curso_<nombre>_<id>`.
 
